@@ -9,7 +9,7 @@ x1[2], y1[2], x2[2], y2[2] = map(int, input().split())
 
 # Please write your code here.
 
-coor = [[0 for _ in range(1000)] for _ in range(1000)]
+coor = [[0 for _ in range(2002)] for _ in range(2002)]
 
 for i in range(2):
     for x in range(x1[i], x2[i]):

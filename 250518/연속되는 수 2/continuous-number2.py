@@ -13,6 +13,6 @@ for i in arr[1:]:
     elif(prev != i):
         if(count > maxCount):
             maxCount =count
-            count =1
-    prev = i
+        count =1
+        prev = i
 print(maxCount)

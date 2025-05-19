@@ -1,7 +1,12 @@
-def verfInfest(i, j):
+def verfInfest(i):
     if(infested[i] and handCount[i] !=0):
-        handCount[i] -=1
-        infested[j] = 1
+        return True
+    else:
+        return False
+
+def infest(i, j):
+    infested[j]=1
+    handCount[i] -=1
 
 N,K,P,T = map(int,input().split())
 
@@ -16,7 +21,12 @@ handShake = sorted(handShake, key = lambda x : x[0])
 
 for hs in handShake:
     t,x,y = hs
-    verfInfest(x, y)
-    verfInfest(y, x)
+    xInfestAble = verfInfest(x)
+    yInfestAble = verfInfest(y)
+    if(xInfestAble):
+        infest(x,y)
+    if(yInfestAble):
+        infest(y,x)
+    
 for i in infested[1:]:
     print(i, end="")

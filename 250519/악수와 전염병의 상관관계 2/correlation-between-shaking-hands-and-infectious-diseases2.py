@@ -1,6 +1,6 @@
 def verfInfest(i, j):
     if(infested[i] and handCount[i] !=0):
-        handCount[j] -=1
+        handCount[i] -=1
         infested[j] = 1
 
 N,K,P,T = map(int,input().split())

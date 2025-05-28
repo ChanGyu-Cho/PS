@@ -28,6 +28,9 @@ for i in range(n):
             if(passFlag):
                 S = int(a)+int(b)+int(c)
                 maxSum =max(maxSum, S)
-print(maxSum)
+if maxSum ==0:
+    print(-1)
+else:
+    print(maxSum)
 
 

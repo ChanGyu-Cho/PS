@@ -10,7 +10,7 @@ H 높이와의 차의 절댓값의 합을 minVal로 갱신
 minVal = 10**10
 for i in range(N-T+1):
     Sum=0
-    for j in range(i, i+3):
+    for j in range(i, i+T):
         Sum += abs(H-arr[j])
     minVal = min(minVal, Sum)
 print(minVal)

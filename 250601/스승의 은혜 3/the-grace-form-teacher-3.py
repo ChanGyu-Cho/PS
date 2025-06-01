@@ -5,7 +5,7 @@ P = [gift[0] for gift in gifts]
 S = [gift[1] for gift in gifts]
 """
 단순하게 학생 하나씩 제외해보기
-+ 조합(백트래킹) 문제
+이후 정렬(P+S값 기준)후, 최소값부터 더해보기
 """
 # Please write your code here.
 

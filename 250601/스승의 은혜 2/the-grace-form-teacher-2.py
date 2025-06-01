@@ -15,7 +15,7 @@ for halfStu in range(N):   # 학생 하나씩 반값 선택
         if(halfStu == stu):
             continue
         SUM += P[stu]
-        if(SUM >=B):    # 제한 넘기면, 어차피 다음은 더큰 선물이기에 파기
+        if(SUM >B):    # 제한 넘기면, 어차피 다음은 더큰 선물이기에 파기
             break
         count +=1
     maxCount = max(maxCount, count)

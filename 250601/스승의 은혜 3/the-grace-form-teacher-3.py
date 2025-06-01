@@ -9,13 +9,12 @@ S = [gift[1] for gift in gifts]
 """
 # Please write your code here.
 
-
 maxCount = 0
 
 for halfStu in range(N):   # 학생 하나씩 반값 선택
     SUM = P[halfStu]//2 +S[halfStu]
-    if(SUM >=B):
-        break
+    if(SUM >B):
+        continue
     count =1
     for stu in range(N):
         if(halfStu == stu):

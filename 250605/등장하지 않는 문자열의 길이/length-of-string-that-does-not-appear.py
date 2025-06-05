@@ -27,7 +27,7 @@ for key, count in l:
     if(visited[len(key)]):
         continue
     else:
-        if(count == 2):
+        if(count >= 2):
             visited[len(key)] = True
         else:
             print(len(key))

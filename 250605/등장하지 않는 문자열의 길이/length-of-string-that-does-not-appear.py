@@ -11,7 +11,7 @@ str = input()
 
 dic = {}
 
-for sld in range(1, N//2 +2):
+for sld in range(1, N+1):
     for i in range(N-sld+1):
         key = str[i:i+sld]
         if(key in dic):

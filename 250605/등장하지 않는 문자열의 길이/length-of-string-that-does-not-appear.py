@@ -21,14 +21,15 @@ for sld in range(1, N//2 +2):
 
 l = [[key,dic[key]] for key in dic]
 l = sorted(l, key = lambda x: len(x[0]))
+#print(l)
 
 visited = [False for _ in range(N+1)]
+maxLen = 1
 for key, count in l:
     if(visited[len(key)]):
         continue
     else:
         if(count >= 2):
             visited[len(key)] = True
-        else:
-            print(len(key))
-            break
+            maxLen = max(maxLen, len(key))
+print(maxLen+1)

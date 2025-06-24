@@ -16,8 +16,7 @@ i=0이 가장 큰 경우를 생각해야함
 
 # Please write your code here.
 
-arr = []
-
+"""
 def search(idx, cur):
     if(idx == n-1):
         print(*arr)
@@ -28,8 +27,18 @@ def search(idx, cur):
         arr.append(i)
         search(idx+1, i)
         arr.pop()
-
+"""
 for i in range(adj[0]-1, 0, -1):
-    arr.append(i)
-    search(0,i) 
-    arr.pop()
+    arr = [i]
+
+    cur = adj[0]-i
+    for idx in range(1, n):
+        if(idx == n-1):
+            arr.append(cur)
+            print(*arr)
+            exit()
+        if(cur > adj[idx] or cur <=0):
+            break
+        arr.append(cur)
+        cur = adj[idx] - cur
+

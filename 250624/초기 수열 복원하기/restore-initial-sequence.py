@@ -16,29 +16,18 @@ i=0이 가장 큰 경우를 생각해야함
 
 # Please write your code here.
 
-"""
-def search(idx, cur):
-    if(idx == n-1):
-        print(*arr)
-        exit()
-    if(cur > adj[idx]):
-        return
-    for i in range(adj[idx]-cur, 0, -1):
-        arr.append(i)
-        search(idx+1, i)
-        arr.pop()
-"""
 for i in range(adj[0]-1, 0, -1):
-    arr = [i]
+    arr = set()
+    arr.add(i)
 
     cur = adj[0]-i
     for idx in range(1, n):
         if(idx == n-1):
-            arr.append(cur)
+            arr.add(cur)
             print(*arr)
             exit()
-        if(cur > adj[idx] or cur <=0):
+        if(cur > adj[idx] or cur <=0 or cur in arr):
             break
-        arr.append(cur)
+        arr.add(cur)
         cur = adj[idx] - cur
 

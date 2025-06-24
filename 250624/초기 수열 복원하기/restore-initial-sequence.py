@@ -1,0 +1,35 @@
+n = int(input())
+adj = list(map(int, input().split()))
+
+"""
+N이하 수들이 단 한번만 출현하는 수열을 복원
+주어지는건 원본 수열에서 앞자리 수를 더한 수열인 길이 N-1
+가능한 답은 여러개, 사전순 가장 앞선 수열 출력
+
+분리할 2개의 숫자는 i,i+1 각각보다 각각 작아야하며, 합은 i와 같아야 한다
+1-i까지 탐색, i, i+1보다 커지면 중단
+i=0이 정해지면, 나머지 숫자들도 정해짐
+i=0이 가장 큰 경우를 생각해야함
+
+3
+"""
+
+# Please write your code here.
+
+arr = []
+
+def search(idx, cur):
+    if(idx == n-1):
+        print(*arr)
+        exit()
+    if(cur > adj[idx]):
+        return
+    for i in range(adj[idx]-cur, 0, -1):
+        arr.append(i)
+        search(idx+1, i)
+        arr.pop()
+
+for i in range(adj[0]-1, 0, -1):
+    arr.append(i)
+    search(0,i) 
+    arr.pop()

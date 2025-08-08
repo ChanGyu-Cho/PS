@@ -4,12 +4,17 @@ dir = [move[0] for move in moves]
 dist = [int(move[1]) for move in moves]
 
 # Please write your code here.
-compass = {'W': [-1,0], 'S':[0,-1], 'N':[0,1], 'E':[1,0]}
-cur = [0,0]
+dx,dy = [1,0,-1,0],[0,1,0,-1]   # E,N,W,S
+x,y = 0,0
 
-for i in range(n):
-    DIR, DIST = dir[i], dist[i]
-    x,y = compass[DIR]
-    cur[0] +=DIST*x
-    cur[1] +=DIST*y
-print(*cur)
+for i, d in enumerate(dir):
+    if d=="E":
+        numDir = 0
+    elif d=="N":
+        numDir = 1
+    elif d=="W":
+        numDir = 2   
+    else:
+        numDir = 3
+    x,y = x+dist[i]*dx[numDir], y +dist[i]*dy[numDir]
+print(x,y)

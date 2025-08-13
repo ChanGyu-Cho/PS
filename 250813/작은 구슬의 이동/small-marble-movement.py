@@ -10,7 +10,7 @@ r,c는 raw col, d는 direction
 dx,dy = [0,1,0,-1],[1,0,-1,0]   # R,D,L,U
 
 def verify(r,c):
-    if r<1 or r>n or c<1 or r>n:
+    if r<1 or r>n or c<1 or c>n:
         return False
     else:
         return True
